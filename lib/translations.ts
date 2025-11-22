@@ -1,0 +1,230 @@
+export const translations = {
+  fr: {
+    nav: {
+      about: 'Mon parcours',
+      therapeutic: 'Espace Thérapeutique',
+      support: 'Espace Écoute',
+      coaching: 'Coaching',
+      contact: 'Contact',
+    },
+    hero: {
+      title: 'Accompagnement thérapeutique et bien-être',
+      subtitle: 'Bienvenue dans un espace de sécurité, d\'écoute et de transformation. Je suis là pour vous accompagner vers plus de confiance, de clarté et de bien-être.',
+      cta: 'Prendre rendez-vous',
+    },
+    about: {
+      title: 'Mon Parcours',
+      content: [
+        'Suite à mes grands intérêts au bien-être et interactions humaines, j\'ai entrepris les études axées sur les sciences de la santé et les sciences sociales en Belgique. Je me suis formée pendant trois ans en gestalt thérapie en France. Je me suis formée également en coaching de vie et à la communication non violente en Belgique.',
+        'Dans mon expérience professionnelle et sur base de certaines études scientifiques en psychologie et en neuroscience, je me rends compte que la base de notre bien-être global réside à la perception que nous avons de nous-même et de notre environnement.',
+        'Cette perception prend racine de nos expériences précoces et impacte nos schémas relationnels. Ces connaissances et expériences me permettent d\'être bien outillée pour accompagner les personnes qui rencontrent les difficultés à améliorer leur qualité de vie et relation.',
+      ]
+    },
+    therapeutic: {
+      title: 'Espace Thérapeutique',
+      approach: 'Quelle est mon approche thérapeutique?',
+      gestaltTitle: 'La Gestalt Thérapie',
+      gestaltContent: [
+        'Il s\'agit d\'une approche mondialement reconnue initiée par Fritz Perls dans les années 1950 qui était un neuropsychiatre, la Gestalt est une méthode thérapeutique complète. Elle se classe dans les thérapies humanistes et holistiques. Elle prend en compte tous les aspects de l\'être humain : le corps, les pensées (mentales), la gestion des émotions et les relations sociales.',
+        'Elle est centrée sur l\'expérience vécue dans l\'instant présent. Elle nous permet de mieux comprendre ce que nous ressentons, ce que nous vivons et comment nous le vivons.',
+        'Le passé est exploré seulement quand il continue d\'influencer notre vie actuelle inconsciemment ou consciemment et devient sources de souffrances, difficultés ou blocages.',
+        'Avec cette approche, je mobilise mon savoir qui croise la psychanalyse, la théorie du développement, les recherches issues des neurosciences, et les concepts du docteur Perls actualisés par l\'école humaniste de Gestalt pour vous aider à :',
+      ],
+      gestaltPoints: [
+        'Guérir les blessures non traitées et vivre de manière plus confiante et consciente',
+        'Donner du sens à vos interactions, émotions, pensées, et actions',
+        'Vous connecter à vos propres ressources, face aux défis de l\'existence de manière appropriée et vivre pleinement',
+      ],
+      themesTitle: 'Les Thèmes Traités',
+      themes: [
+        'Gestion du stress et anxiété',
+        'Difficultés relationnelles',
+        'Trauma',
+        'Burnout parental et professionnel',
+        'Addiction (alcool, drogue, nourriture, écrans)',
+        'Perte de motivation et perte de sens',
+        'Phobies',
+        'Problèmes relationnels et conflits conjugaux/familiaux',
+        'Harcèlement et exclusion',
+        'Difficultés dans l\'expression des émotions',
+        'Peur de s\'engager et d\'échec',
+        'Stress et peur de conduire',
+      ]
+    },
+    support: {
+      title: 'Espace Écoute et Soutien',
+      intro: 'Ces cercles octroient la possibilité d\'échanger sur les expériences individuelles et donc de confronter les récits, les ressources et les évolutions de chacun : c\'est de fait un endroit essentiel pour obtenir des clés et prendre du recul afin d\'avancer et dépasser son traumatisme psychologique.',
+      description: 'Dans cet espace vous vous sentez en sécurité pour vous exprimer librement vos émotions, préoccupations, difficultés. Vous êtes accueilli sans jugement avec bienveillance. La confidentialité est de mise. Ce que vous partagez reste confidentiel.',
+      formats: 'Formats d\'Accompagnement',
+      formatsList: [
+        'Accompagnement individuel',
+        'Accompagnement de couple',
+        'Accompagnement en groupe',
+        'Appels anonymes',
+      ],
+      themesTitle: 'Thèmes Abordés',
+      themesList: [
+        'Isolement, maladie, deuil et veuvage',
+        'Divorce ou séparation',
+        'Handicap et accident',
+        'Perte de repères',
+        'Drogue et alcoolisme dans la famille',
+        'Mariage forcé, excision',
+        'Famille recomposée',
+        'Familles monoparentales',
+        'Conflits liés à la polygamie',
+        'Décrochage scolaire',
+        'Communication',
+      ],
+      groupTitle: 'Au Niveau du Groupe',
+      groupList: [
+        'Ateliers et conférences sur les thèmes mentionnés',
+        'Webinaires',
+        'Espace de célébration des vies',
+        'Espace de témoignage (audio/vidéo)',
+        'Appels anonymes',
+      ]
+    },
+    coaching: {
+      title: 'Coaching',
+      items: [
+        {
+          title: 'Communication',
+          description: 'Coaching dans la communication et prévention et résolution des conflits',
+        },
+        {
+          title: 'Réalisation de Projets',
+          description: 'Déblocage pour réaliser ses projets et surmonter les obstacles',
+        },
+        {
+          title: 'Visualisation',
+          description: 'Techniques de visualisation pour clarifier vos objectifs et vision',
+        },
+      ]
+    },
+    contact: {
+      title: 'Prendre Rendez-vous',
+      whatsapp: 'WhatsApp',
+      email: 'Email',
+    },
+    footer: {
+      name: 'Hope & Mind - Accompagnement Thérapeutique',
+      location: 'Bruxelles, Belgique',
+      ethics: 'Signataire du code de déontologie de l\'École Humaniste de Gestalt',
+    }
+  },
+  en: {
+    nav: {
+      about: 'About Me',
+      therapeutic: 'Therapeutic Space',
+      support: 'Support & Listening Space',
+      coaching: 'Coaching',
+      contact: 'Contact',
+    },
+    hero: {
+      title: 'Therapeutic Accompaniment and Wellbeing',
+      subtitle: 'Welcome to a space of safety, listening, and transformation. I\'m here to guide you towards greater confidence, clarity, and wellbeing.',
+      cta: 'Book an Appointment',
+    },
+    about: {
+      title: 'About Me',
+      content: [
+        'Driven by a deep interest in wellbeing and human interactions, I pursued studies focused on health sciences and social sciences in Belgium. I completed three years of Gestalt therapy training in France and further trained in life coaching and nonviolent communication in Belgium.',
+        'Through my professional experience and based on scientific research in psychology and neuroscience, I have come to understand that the foundation of our overall wellbeing lies in the perception we have of ourselves and our environment.',
+        'This perception is rooted in our early experiences and impacts our relational patterns. These insights and experiences have equipped me to accompany individuals facing difficulties in the themes outlined below, helping them improve their quality of life and relationships.',
+      ]
+    },
+    therapeutic: {
+      title: 'Therapeutic Space',
+      approach: 'What is my therapeutic approach?',
+      gestaltTitle: 'Gestalt Therapy',
+      gestaltContent: [
+        'Gestalt therapy is a globally recognized approach initiated by Fritz Perls in the 1950s. As a trained neuropsychiatrist, Perls developed Gestalt as a complete therapeutic method. It falls within humanistic and holistic therapies, taking into account all aspects of the human being: body, thoughts, emotion management, and social relationships.',
+        'It is centered on the experience lived in the present moment. It helps us better understand what we feel, what we experience, and how we experience it.',
+        'The past is explored only when it continues to unconsciously or consciously influence our current life and becomes a source of suffering, difficulties, or blockages.',
+        'With this approach, I draw on knowledge that combines psychoanalysis, developmental theory, neuroscience research, and the concepts of Dr. Perls as updated by the Gestalt Humanistic School to help you:',
+      ],
+      gestaltPoints: [
+        'Heal unresolved wounds and live with greater confidence and awareness',
+        'Give meaning to your interactions, emotions, thoughts, and actions',
+        'Connect with your own resources to face life\'s challenges appropriately and live fully',
+      ],
+      themesTitle: 'Themes I Address',
+      themes: [
+        'Stress and anxiety management',
+        'Relational difficulties',
+        'Trauma',
+        'Parental and professional burnout',
+        'Addiction (alcohol, drugs, food, screens)',
+        'Loss of motivation and meaning',
+        'Phobias',
+        'Relational problems and marital/family conflicts',
+        'Harassment and exclusion',
+        'Difficulties expressing emotions',
+        'Fear of commitment and failure',
+        'Driving anxiety and stress',
+      ]
+    },
+    support: {
+      title: 'Support & Listening Space',
+      intro: 'These circles provide an opportunity to share individual experiences and therefore to compare narratives, resources, and personal development: this is an essential place to find keys and gain perspective to move forward and overcome psychological trauma.',
+      description: 'In this space, you feel safe to freely express your emotions, concerns, and difficulties. You are welcomed without judgment, with kindness and warmth. Confidentiality is maintained. What you share remains confidential.',
+      formats: 'Formats of Accompaniment',
+      formatsList: [
+        'Individual accompaniment',
+        'Couples accompaniment',
+        'Group accompaniment',
+        'Anonymous calls',
+      ],
+      themesTitle: 'Themes Addressed',
+      themesList: [
+        'Isolation, illness, grief, and bereavement',
+        'Divorce or separation',
+        'Disability and accidents',
+        'Loss of landmarks',
+        'Drug and alcohol issues in the family',
+        'Forced marriage, female genital mutilation',
+        'Blended families',
+        'Single-parent families',
+        'Conflicts related to polygamy',
+        'School dropout',
+        'Communication',
+      ],
+      groupTitle: 'Group Level Activities',
+      groupList: [
+        'Workshops and conferences on the themes mentioned',
+        'Webinars',
+        'Celebrations of lives',
+        'Testimonial space (audio/video)',
+        'Anonymous calls',
+      ]
+    },
+    coaching: {
+      title: 'Coaching',
+      items: [
+        {
+          title: 'Communication',
+          description: 'Coaching in communication and conflict prevention and resolution',
+        },
+        {
+          title: 'Project Realization',
+          description: 'Unblocking and overcoming obstacles to realize your projects',
+        },
+        {
+          title: 'Visualization',
+          description: 'Visualization techniques to clarify your goals and vision',
+        },
+      ]
+    },
+    contact: {
+      title: 'Book an Appointment',
+      whatsapp: 'WhatsApp',
+      email: 'Email',
+    },
+    footer: {
+      name: 'Hope & Mind - Therapeutic Accompaniment',
+      location: 'Brussels, Belgium',
+      ethics: 'Signatory of the Ethical Code of the Gestalt Humanistic School',
+    }
+  }
+}
