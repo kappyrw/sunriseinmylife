@@ -1,7 +1,8 @@
+
 "use client"
 
 import { Facebook, Youtube, Instagram, Music } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { translations } from "@/lib/translations"
 import { LanguageProvider, useLanguage } from "./language-provider"
 import { TypingText } from "@/components/typing-text"
@@ -10,6 +11,7 @@ import { Header } from "@/components/header"
 function HomeContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [showContactModal, setShowContactModal] = useState(false)
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const [contactForm, setContactForm] = useState({ name: "", phone: "", email: "", message: "", country: "", city: "" })
   const { language, setLanguage } = useLanguage()
   const t = translations[language]
@@ -19,6 +21,15 @@ function HomeContent() {
     support: false,
     coaching: false,
   })
+
+  // Show welcome modal on first load
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisitedBefore')
+    if (!hasVisited) {
+      setShowWelcomeModal(true)
+      sessionStorage.setItem('hasVisitedBefore', 'true')
+    }
+  }, [])
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({
@@ -61,18 +72,60 @@ function HomeContent() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Navigation */}
       <Header />
 
+      {/* Welcome Modal */}
+      {showWelcomeModal && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 md:p-10 animate-scale-in relative overflow-hidden transition-colors duration-300">
+            {/* Decorative gradient background */}
+            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-500 via-teal-500 to-purple-500"></div>
+            
+            <div className="text-center space-y-6">
+              {/* French Section */}
+              <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
+                <h2 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-4">
+                  Ne Vous Inquiétez Jamais de la Langue
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Nous offrons nos services directement en français, kinyarwanda et kirundi.
+Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue. Vous n’avez jamais à vous inquiéter.
+                </p>
+              </div>
+
+              {/* English Section */}
+              <div className="pb-2">
+                <h2 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-4">
+                  Never Worry About Language
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  We provide our services directly in French, Kinyarwanda, and Kirundi.
+And with our advanced translation technology, we can assist everyone,no matter what language they speak. You never have to worry.
+                </p>
+              </div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setShowWelcomeModal(false)}
+                className="mt-6 w-full bg-gradient-to-r from-purple-600 to-teal-600 hover:from-purple-700 hover:to-teal-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+              >
+                Commencer / Start
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section with Image and Creative Title */}
-      <section className="relative h-screen md:h-screen overflow-hidden bg-gray-100 flex items-center justify-center">
+      <section className="relative h-screen md:h-screen overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center transition-colors duration-300">
         <img
           src="/images/hero-wellness.jpg"
           alt="Wellness and healing journey"
-          className="w-full h-full object-cover object-top animate-subtle-zoom image-hover"
+          className="w-full h-full object-cover object-top animate-subtle-zoom image-hover dark:opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent dark:from-black/50 dark:via-black/40 dark:to-transparent flex items-center justify-center">
           <div className="text-center">
             <h1
               className="text-5xl md:text-7xl font-light tracking-wide animate-hero-glow"
@@ -85,30 +138,30 @@ function HomeContent() {
       </section>
 
       {/* Section Title - Minimal & Clean */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-gray-800 mb-6 tracking-tight animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-light text-gray-800 dark:text-gray-100 mb-6 tracking-tight animate-fade-in">
             {t.hero.title}
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto animate-slide-up-text">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto animate-slide-up-text">
             {t.hero.subtitle}
           </p>
         </div>
       </section>
 
       {/* About Section with Side Image */}
-      <section id="about" className="py-0 md:py-0 bg-white section-spacing">
+      <section id="about" className="py-0 md:py-0 bg-white dark:bg-gray-900 section-spacing transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-              <h3 className="text-3xl md:text-4xl font-light text-gray-800 mb-8 animate-slide-up-text">
+              <h3 className="text-3xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-8 animate-slide-up-text">
                 {t.about.title}
               </h3>
               <div className="space-y-4">
                 {t.about.content.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="text-gray-700 leading-relaxed text-sm md:text-base animate-slide-up-text"
+                    className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base animate-slide-up-text"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {paragraph}
@@ -116,11 +169,11 @@ function HomeContent() {
                 ))}
               </div>
             </div>
-            <div className="relative h-96 md:h-auto md:min-h-[700px] overflow-hidden bg-gray-100">
+            <div className="relative h-96 md:h-auto md:min-h-[700px] overflow-hidden bg-gray-100 dark:bg-gray-800">
               <img
                 src="/images/coaching-visualization.jpg"
                 alt="Professional woman"
-                className="w-full h-full object-cover animate-image-pan image-hover"
+                className="w-full h-full object-cover animate-image-pan image-hover dark:opacity-80"
               />
             </div>
           </div>
@@ -133,10 +186,10 @@ function HomeContent() {
           <img
             src="/images/therapeutic-session.jpg"
             alt="Therapeutic approach"
-            className="absolute inset-0 w-full h-full object-cover object-center animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full object-cover object-center animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500 dark:opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-transparent"></div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-transparent dark:from-black/60 dark:via-black/45 dark:to-transparent"></div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center md:text-left">
             <h3 className="text-3xl md:text-5xl font-light text-white mb-6 animate-slide-up-text">
               {t.therapeutic.title}
             </h3>
@@ -144,7 +197,7 @@ function HomeContent() {
               onClick={() => {
                 toggleSection("therapeutic")
               }}
-              className="inline-block text-white border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold"
+              className="inline-block text-white border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300 font-semibold"
             >
               {expandedSections.therapeutic ? "✕ CLOSE" : "→ GO"}
             </button>
@@ -152,20 +205,20 @@ function HomeContent() {
         </div>
 
         {expandedSections.therapeutic && (
-          <section className="py-16 md:py-24 bg-white border-b border-gray-100 section-reveal">
+          <section className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 section-reveal transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-12">
-                <h4 className="text-2xl md:text-3xl font-light text-gray-800 mb-8">{t.therapeutic.approach}</h4>
+                <h4 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-8">{t.therapeutic.approach}</h4>
                 <div className="space-y-6">
                   <div>
-                    <h5 className="text-xl font-semibold text-gray-800 mb-4">{t.therapeutic.gestaltTitle}</h5>
-                    <div className="space-y-4 text-gray-700">
+                    <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.therapeutic.gestaltTitle}</h5>
+                    <div className="space-y-4 text-gray-700 dark:text-gray-300">
                       {t.therapeutic.gestaltContent.map((paragraph, index) => (
                         <p key={index} className="leading-relaxed">
                           {paragraph}
                         </p>
                       ))}
-                      <ul className="list-disc list-inside space-y-2 text-gray-700 mt-4">
+                      <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mt-4">
                         {t.therapeutic.gestaltPoints.map((point, index) => (
                           <li key={index} className="leading-relaxed">
                             {point}
@@ -178,20 +231,20 @@ function HomeContent() {
               </div>
 
               <div>
-                <h4 className="text-2xl md:text-3xl font-light text-gray-800 mb-8">{t.therapeutic.themesTitle}</h4>
+                <h4 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-8">{t.therapeutic.themesTitle}</h4>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {t.therapeutic.themes.map((theme, index) => (
                     <div
                       key={index}
-                      className="p-4 bg-gray-50 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
-                      <p className="text-gray-800 font-medium">{theme}</p>
+                      <p className="text-gray-800 dark:text-gray-200 font-medium">{theme}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="flex justify-center mt-12 pt-8 border-t border-gray-200">
+              <div className="flex justify-center mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => setShowContactModal(true)}
                   className="inline-block text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-8 py-3 rounded-full transition-all duration-300 font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transform hover:-translate-y-1"
@@ -210,14 +263,14 @@ function HomeContent() {
           <img
             src="/images/support-group.jpg"
             alt="Support and community"
-            className="absolute inset-0 w-full h-full object-cover animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full object-cover animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500 dark:opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-transparent"></div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-transparent dark:from-black/60 dark:via-black/45 dark:to-transparent"></div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center md:text-left">
             <h3 className="text-3xl md:text-5xl font-light text-white mb-6 animate-slide-up-text">{t.support.title}</h3>
             <button
               onClick={() => toggleSection("support")}
-              className="inline-block text-white border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold"
+              className="inline-block text-white border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300 font-semibold"
             >
               {expandedSections.support ? "✕ CLOSE" : "→ GO"}
             </button>
@@ -225,29 +278,29 @@ function HomeContent() {
         </div>
 
         {expandedSections.support && (
-          <section className="py-16 md:py-24 bg-white border-b border-gray-100 section-reveal">
+          <section className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 section-reveal transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-12 max-w-3xl">
-                <p className="text-gray-700 leading-relaxed text-base mb-6">{t.support.intro}</p>
-                <p className="text-gray-700 leading-relaxed text-base">{t.support.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base mb-6">{t.support.intro}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">{t.support.description}</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-12">
-                <div className="bg-gray-50 p-6 border border-gray-200">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-6">{t.support.formats}</h4>
-                  <ul className="space-y-3 text-gray-700">
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+                  <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">{t.support.formats}</h4>
+                  <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                     {t.support.formatsList.map((item, index) => (
                       <li key={index} className="flex items-start gap-3 leading-relaxed">
-                        <span className="text-gray-800 font-bold">◆</span>
+                        <span className="text-gray-800 dark:text-gray-200 font-bold">◆</span>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 p-6 border border-gray-200">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-6">{t.support.themesTitle}</h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+                  <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">{t.support.themesTitle}</h4>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
                     {t.support.themesList.map((item, index) => (
                       <li key={index} className="leading-relaxed">
                         ◆ {item}
@@ -257,9 +310,9 @@ function HomeContent() {
                 </div>
               </div>
 
-              <div className="mt-12 pt-12 border-t border-gray-200 bg-gray-50 p-6">
-                <h4 className="text-xl font-semibold text-gray-800 mb-6">{t.support.groupTitle}</h4>
-                <ul className="space-y-2 text-gray-700">
+              <div className="mt-12 pt-12 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-6 transition-colors duration-300">
+                <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">{t.support.groupTitle}</h4>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                   {t.support.groupList.map((item, index) => (
                     <li key={index} className="leading-relaxed">
                       ◆ {item}
@@ -268,7 +321,7 @@ function HomeContent() {
                 </ul>
               </div>
 
-              <div className="flex justify-center mt-12 pt-8 border-t border-gray-200">
+              <div className="flex justify-center mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => setShowContactModal(true)}
                   className="inline-block text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-8 py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 transform hover:-translate-y-1"
@@ -287,16 +340,16 @@ function HomeContent() {
           <img
             src="/images/coaching-visualization.jpg"
             alt="Coaching and visualization"
-            className="absolute inset-0 w-full h-full object-cover object-top animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full object-cover object-top animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500 dark:opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-transparent"></div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-transparent dark:from-black/60 dark:via-black/45 dark:to-transparent"></div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center md:text-left">
             <h3 className="text-3xl md:text-4xl font-light text-white mb-6 animate-slide-up-text">
               {t.coaching.title}
             </h3>
             <button
               onClick={() => toggleSection("coaching")}
-              className="inline-block text-white border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold"
+              className="inline-block text-white border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300 font-semibold"
             >
               {expandedSections.coaching ? "✕ CLOSE" : "→ GO"}
             </button>
@@ -304,21 +357,21 @@ function HomeContent() {
         </div>
 
         {expandedSections.coaching && (
-          <section className="py-16 md:py-24 bg-white border-b border-gray-100 section-reveal">
+          <section className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 section-reveal transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-3 gap-8">
                 {t.coaching.items.map((item, index) => (
                   <div
                     key={index}
-                    className="p-6 bg-gray-50 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                    className="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300"
                   >
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">{item.title}</h4>
-                    <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">{item.title}</h4>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="flex justify-center mt-12 pt-8 border-t border-gray-200">
+              <div className="flex justify-center mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => setShowContactModal(true)}
                   className="inline-block text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-8 py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 transform hover:-translate-y-1"
@@ -332,9 +385,9 @@ function HomeContent() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 bg-white border-b border-gray-100">
+      <section id="contact" className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl md:text-4xl font-light text-gray-800 mb-12">{t.contact.title}</h3>
+          <h3 className="text-3xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-12">{t.contact.title}</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <button
               onClick={() => setShowContactModal(true)}
@@ -366,8 +419,8 @@ function HomeContent() {
       {/* Contact Modal */}
       {showContactModal && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-fade-in">
-            <h2 className="text-2xl font-light text-gray-800 mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full p-8 animate-fade-in transition-colors duration-300">
+            <h2 className="text-2xl font-light text-gray-800 dark:text-gray-100 mb-6">
               {language === "fr" ? "Demande de rendez-vous" : "Appointment Request"}
             </h2>
 
@@ -377,21 +430,21 @@ function HomeContent() {
                 placeholder={language === "fr" ? "Votre nom" : "Your name"}
                 value={contactForm.name}
                 onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               />
               <input
                 type="tel"
                 placeholder={language === "fr" ? "Votre téléphone" : "Your phone"}
                 value={contactForm.phone}
                 onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               />
               <input
                 type="email"
                 placeholder={language === "fr" ? "Votre email" : "Your email"}
                 value={contactForm.email}
                 onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               />
               <textarea
                 placeholder={
@@ -399,6 +452,7 @@ function HomeContent() {
                     ? "Votre message (ex: Je souhaite un rendez-vous le...)"
                     : "Your message (e.g., I would like an appointment...)"
                 }
+                
                 value={contactForm.message}
                 onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none h-24"

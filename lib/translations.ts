@@ -123,7 +123,7 @@ export const translations = {
     },
     hero: {
       title: 'Therapeutic Accompaniment and Wellbeing',
-      subtitle: 'Welcome to a space of safety, listening, and transformation. I\'m here to guide you towards greater confidence, clarity, and wellbeing.',
+      subtitle: 'Welcome to a space of safety, listening, and transformation. I\'m here to guide you towards greater confidence, clarity, and wellbeing',
       cta: 'Book an Appointment',
     },
     about: {
