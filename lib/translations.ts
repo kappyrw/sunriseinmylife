@@ -15,9 +15,9 @@ export const translations = {
     about: {
       title: 'Mon Parcours',
       content: [
-        'Suite à mes grands intérêts au bien-être et interactions humaines, j\'ai entrepris les études axées sur les sciences de la santé et les sciences sociales en Belgique. Je me suis formée pendant trois ans en gestalt thérapie en France. Je me suis formée également en coaching de vie et à la communication non violente en Belgique.',
+        'Je m’appelle UMUMARARUNGU Alphonsine, Suite à mon grands intérêts au bien-être et interactions humaines, j\'ai entrepris les études axées sur les sciences de la santé et les sciences sociales en Belgique. Je me suis formée pendant trois ans en gestalt thérapie en France. Je me suis formée également en coaching de vie et à la communication non violente en Belgique.',
         'Dans mon expérience professionnelle et sur base de certaines études scientifiques en psychologie et en neuroscience, je me rends compte que la base de notre bien-être global réside à la perception que nous avons de nous-même et de notre environnement.',
-        'Cette perception prend racine de nos expériences précoces et impacte nos schémas relationnels. Ces connaissances et expériences me permettent d\'être bien outillée pour accompagner les personnes qui rencontrent les difficultés à améliorer leur qualité de vie et relation.',
+        'Cette perception prend racine dans nos expériences précoces et impacte nos schémas relationnels. Ces connaissances et expériences me permettent d\'être bien outillée pour accompagner les personnes qui rencontrent les difficultés à améliorer leur qualité de vie et relation.',
       ]
     },
     therapeutic: {
@@ -53,8 +53,8 @@ export const translations = {
     },
     support: {
       title: 'Espace Écoute et Soutien',
-      intro: 'Ces cercles octroient la possibilité d\'échanger sur les expériences individuelles et donc de confronter les récits, les ressources et les évolutions de chacun : c\'est de fait un endroit essentiel pour obtenir des clés et prendre du recul afin d\'avancer et dépasser son traumatisme psychologique.',
-      description: 'Dans cet espace vous vous sentez en sécurité pour vous exprimer librement vos émotions, préoccupations, difficultés. Vous êtes accueilli sans jugement avec bienveillance. La confidentialité est de mise. Ce que vous partagez reste confidentiel.',
+      intro: '',
+      description: 'Dans cet espace vous vous sentez en sécurité pour vous exprimer librement vos émotions, préoccupations, difficultés. Vous êtes accueillis sans jugement avec bienveillance. La confidentialité est de mise. Ce que vous partagez reste confidentiel.',
       formats: 'Formats d\'Accompagnement',
       formatsList: [
         'Accompagnement individuel',
@@ -94,7 +94,7 @@ export const translations = {
         },
         {
           title: 'Réalisation de Projets',
-          description: 'Déblocage pour réaliser ses projets et surmonter les obstacles',
+          description: 'Déblocage pour réaliser ses projets(permis de conduire) et surmonter les obstacles',
         },
         {
           title: 'Visualisation',
@@ -108,7 +108,7 @@ export const translations = {
       email: 'Email',
     },
     footer: {
-      name: 'Hope & Mind - Accompagnement Thérapeutique',
+      name: 'Sunrise in my life - Accompagnement Thérapeutique',
       location: 'Bruxelles, Belgique',
       ethics: 'Signataire du code de déontologie de l\'École Humaniste de Gestalt',
     }
@@ -129,7 +129,7 @@ export const translations = {
     about: {
       title: 'About Me',
       content: [
-        'Driven by a deep interest in wellbeing and human interactions, I pursued studies focused on health sciences and social sciences in Belgium. I completed three years of Gestalt therapy training in France and further trained in life coaching and nonviolent communication in Belgium.',
+        'My name is Alphonsine UMUMARARUNGU. Driven by a deep interest in wellbeing and human interactions, I pursued studies focused on health sciences and social sciences in Belgium. I completed three years of Gestalt therapy training in France and further trained in life coaching and nonviolent communication in Belgium.',
         'Through my professional experience and based on scientific research in psychology and neuroscience, I have come to understand that the foundation of our overall wellbeing lies in the perception we have of ourselves and our environment.',
         'This perception is rooted in our early experiences and impacts our relational patterns. These insights and experiences have equipped me to accompany individuals facing difficulties in the themes outlined below, helping them improve their quality of life and relationships.',
       ]
@@ -208,7 +208,7 @@ export const translations = {
         },
         {
           title: 'Project Realization',
-          description: 'Unblocking and overcoming obstacles to realize your projects',
+          description: 'Unlocking opportunities to achieve your projects (driver’s license) and overcome obstacles',
         },
         {
           title: 'Visualization',
@@ -222,7 +222,7 @@ export const translations = {
       email: 'Email',
     },
     footer: {
-      name: 'Hope & Mind - Therapeutic Accompaniment',
+      name: 'Sun Rise In My Life-Therapeutic Accompaniment',
       location: 'Brussels, Belgium',
       ethics: 'Signatory of the Ethical Code of the Gestalt Humanistic School',
     }

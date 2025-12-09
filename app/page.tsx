@@ -53,7 +53,7 @@ function HomeContent() {
 
     if (type === "whatsapp") {
       const encodedMessage = encodeURIComponent(appointmentText)
-      window.open(`https://wa.me/250781718040?text=${encodedMessage}`, "_blank")
+      window.open(`https://wa.me/+32470197039?text=${encodedMessage}`, "_blank")
     } else {
       const subject = language === "fr" ? "Demande de rendez-vous" : "Appointment Request"
       window.location.href = `mailto:sunriseinmylife@sun.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(appointmentText)}`
@@ -91,7 +91,7 @@ function HomeContent() {
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   Nous offrons nos services directement en français, kinyarwanda et kirundi.
-Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue. Vous n’avez jamais à vous inquiéter.
+Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue. 
                 </p>
               </div>
 
@@ -102,7 +102,7 @@ Et grâce à notre technologie avancée de traduction, nous pouvons aider tous l
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   We provide our services directly in French, Kinyarwanda, and Kirundi.
-And with our advanced translation technology, we can assist everyone,no matter what language they speak. You never have to worry.
+And with our advanced translation technology, we can assist everyone,no matter what language they speak. 
                 </p>
               </div>
 
@@ -121,7 +121,7 @@ And with our advanced translation technology, we can assist everyone,no matter w
       {/* Hero Section with Image and Creative Title */}
       <section className="relative h-screen md:h-screen overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center transition-colors duration-300">
         <img
-          src="/images/hero-wellness.jpg"
+          src="/images/hero-wellness1.png"
           alt="Wellness and healing journey"
           className="w-full h-full object-cover object-top animate-subtle-zoom image-hover dark:opacity-70"
         />
@@ -129,7 +129,7 @@ And with our advanced translation technology, we can assist everyone,no matter w
           <div className="text-center">
             <h1
               className="text-5xl md:text-7xl font-light tracking-wide animate-hero-glow"
-              style={{ color: "#F5E6D3" }}
+              style={{ color: "#ffa600" }}
             >
               <TypingText text="SUNRISE IN MY LIFE" speed={80} />
             </h1>
@@ -171,7 +171,7 @@ And with our advanced translation technology, we can assist everyone,no matter w
             </div>
             <div className="relative h-96 md:h-auto md:min-h-[700px] overflow-hidden bg-gray-100 dark:bg-gray-800">
               <img
-                src="/images/coaching-visualization.jpg"
+                src="/images/mom.jpeg"
                 alt="Professional woman"
                 className="w-full h-full object-cover animate-image-pan image-hover dark:opacity-80"
               />
@@ -338,7 +338,7 @@ And with our advanced translation technology, we can assist everyone,no matter w
       <section id="coaching" className="relative section-spacing mt-8 md:mt-12">
         <div className="relative h-screen md:h-screen bg-cover bg-center flex items-center overflow-hidden group">
           <img
-            src="/images/coaching-visualization.jpg"
+            src="/images/coaching-visualization.png"
             alt="Coaching and visualization"
             className="absolute inset-0 w-full h-full object-cover object-top animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500 dark:opacity-70"
           />
@@ -522,7 +522,7 @@ And with our advanced translation technology, we can assist everyone,no matter w
 
           <div className="flex justify-center gap-6 mt-8 pt-8 border-t border-gray-700">
             <a
-              href="https://facebook.com"
+             href="https://facebook.com/sunriseinmylife"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
@@ -531,7 +531,7 @@ And with our advanced translation technology, we can assist everyone,no matter w
               <Facebook size={24} />
             </a>
             <a
-              href="https://youtube.com"
+              href="https://youtube.com/@sunriseinmylife"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-red-600 transition-colors duration-300"
@@ -540,7 +540,8 @@ And with our advanced translation technology, we can assist everyone,no matter w
               <Youtube size={24} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/sunriseinmylife"
+
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-pink-600 transition-colors duration-300"

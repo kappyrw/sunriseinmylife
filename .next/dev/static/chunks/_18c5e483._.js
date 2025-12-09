@@ -23,9 +23,9 @@ const translations = {
         about: {
             title: 'Mon Parcours',
             content: [
-                'Suite à mes grands intérêts au bien-être et interactions humaines, j\'ai entrepris les études axées sur les sciences de la santé et les sciences sociales en Belgique. Je me suis formée pendant trois ans en gestalt thérapie en France. Je me suis formée également en coaching de vie et à la communication non violente en Belgique.',
+                'Je m’appelle UMUMARARUNGU Alphonsine, Suite à mon grands intérêts au bien-être et interactions humaines, j\'ai entrepris les études axées sur les sciences de la santé et les sciences sociales en Belgique. Je me suis formée pendant trois ans en gestalt thérapie en France. Je me suis formée également en coaching de vie et à la communication non violente en Belgique.',
                 'Dans mon expérience professionnelle et sur base de certaines études scientifiques en psychologie et en neuroscience, je me rends compte que la base de notre bien-être global réside à la perception que nous avons de nous-même et de notre environnement.',
-                'Cette perception prend racine de nos expériences précoces et impacte nos schémas relationnels. Ces connaissances et expériences me permettent d\'être bien outillée pour accompagner les personnes qui rencontrent les difficultés à améliorer leur qualité de vie et relation.'
+                'Cette perception prend racine dans nos expériences précoces et impacte nos schémas relationnels. Ces connaissances et expériences me permettent d\'être bien outillée pour accompagner les personnes qui rencontrent les difficultés à améliorer leur qualité de vie et relation.'
             ]
         },
         therapeutic: {
@@ -61,8 +61,8 @@ const translations = {
         },
         support: {
             title: 'Espace Écoute et Soutien',
-            intro: 'Ces cercles octroient la possibilité d\'échanger sur les expériences individuelles et donc de confronter les récits, les ressources et les évolutions de chacun : c\'est de fait un endroit essentiel pour obtenir des clés et prendre du recul afin d\'avancer et dépasser son traumatisme psychologique.',
-            description: 'Dans cet espace vous vous sentez en sécurité pour vous exprimer librement vos émotions, préoccupations, difficultés. Vous êtes accueilli sans jugement avec bienveillance. La confidentialité est de mise. Ce que vous partagez reste confidentiel.',
+            intro: '',
+            description: 'Dans cet espace vous vous sentez en sécurité pour vous exprimer librement vos émotions, préoccupations, difficultés. Vous êtes accueillis sans jugement avec bienveillance. La confidentialité est de mise. Ce que vous partagez reste confidentiel.',
             formats: 'Formats d\'Accompagnement',
             formatsList: [
                 'Accompagnement individuel',
@@ -102,7 +102,7 @@ const translations = {
                 },
                 {
                     title: 'Réalisation de Projets',
-                    description: 'Déblocage pour réaliser ses projets et surmonter les obstacles'
+                    description: 'Déblocage pour réaliser ses projets(permis de conduire) et surmonter les obstacles'
                 },
                 {
                     title: 'Visualisation',
@@ -116,7 +116,7 @@ const translations = {
             email: 'Email'
         },
         footer: {
-            name: 'Hope & Mind - Accompagnement Thérapeutique',
+            name: 'Sunrise in my life - Accompagnement Thérapeutique',
             location: 'Bruxelles, Belgique',
             ethics: 'Signataire du code de déontologie de l\'École Humaniste de Gestalt'
         }
@@ -137,7 +137,7 @@ const translations = {
         about: {
             title: 'About Me',
             content: [
-                'Driven by a deep interest in wellbeing and human interactions, I pursued studies focused on health sciences and social sciences in Belgium. I completed three years of Gestalt therapy training in France and further trained in life coaching and nonviolent communication in Belgium.',
+                'My name is Alphonsine UMUMARARUNGU. Driven by a deep interest in wellbeing and human interactions, I pursued studies focused on health sciences and social sciences in Belgium. I completed three years of Gestalt therapy training in France and further trained in life coaching and nonviolent communication in Belgium.',
                 'Through my professional experience and based on scientific research in psychology and neuroscience, I have come to understand that the foundation of our overall wellbeing lies in the perception we have of ourselves and our environment.',
                 'This perception is rooted in our early experiences and impacts our relational patterns. These insights and experiences have equipped me to accompany individuals facing difficulties in the themes outlined below, helping them improve their quality of life and relationships.'
             ]
@@ -216,7 +216,7 @@ const translations = {
                 },
                 {
                     title: 'Project Realization',
-                    description: 'Unblocking and overcoming obstacles to realize your projects'
+                    description: 'Unlocking opportunities to achieve your projects (driver’s license) and overcome obstacles'
                 },
                 {
                     title: 'Visualization',
@@ -754,7 +754,7 @@ function HomeContent() {
         const appointmentText = language === "fr" ? `Bonjour,\n\nJe m'appelle ${name}.\nMon numéro de téléphone: ${phone}\nMon email: ${email}\n\nVille: ${city}\nPays: ${country}\n\nMessage:\n${message}` : `Hello,\n\nMy name is ${name}.\nMy phone number: ${phone}\nMy email: ${email}\n\nCity: ${city}\nCountry: ${country}\n\nMessage:\n${message}`;
         if (type === "whatsapp") {
             const encodedMessage = encodeURIComponent(appointmentText);
-            window.open(`https://wa.me/250781718040?text=${encodedMessage}`, "_blank");
+            window.open(`https://wa.me/+32470197039?text=${encodedMessage}`, "_blank");
         } else {
             const subject = language === "fr" ? "Demande de rendez-vous" : "Appointment Request";
             window.location.href = `mailto:sunriseinmylife@sun.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(appointmentText)}`;
@@ -827,7 +827,7 @@ function HomeContent() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-700 dark:text-gray-300 leading-relaxed",
-                                            children: "Nous offrons nos services directement en français, kinyarwanda et kirundi. Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue. Vous n’avez jamais à vous inquiéter."
+                                            children: "Nous offrons nos services directement en français, kinyarwanda et kirundi. Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue."
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 92,
@@ -852,7 +852,7 @@ function HomeContent() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-700 dark:text-gray-300 leading-relaxed",
-                                            children: "We provide our services directly in French, Kinyarwanda, and Kirundi. And with our advanced translation technology, we can assist everyone,no matter what language they speak. You never have to worry."
+                                            children: "We provide our services directly in French, Kinyarwanda, and Kirundi. And with our advanced translation technology, we can assist everyone,no matter what language they speak."
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 103,
@@ -894,7 +894,7 @@ function HomeContent() {
                 className: "relative h-screen md:h-screen overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center transition-colors duration-300",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                        src: "/images/hero-wellness.jpg",
+                        src: "/images/hero-wellness1.png",
                         alt: "Wellness and healing journey",
                         className: "w-full h-full object-cover object-top animate-subtle-zoom image-hover dark:opacity-70"
                     }, void 0, false, {
@@ -909,7 +909,7 @@ function HomeContent() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                 className: "text-5xl md:text-7xl font-light tracking-wide animate-hero-glow",
                                 style: {
-                                    color: "#F5E6D3"
+                                    color: "#ffa600"
                                 },
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$typing$2d$text$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TypingText"], {
                                     text: "SUNRISE IN MY LIFE",
@@ -1018,7 +1018,7 @@ function HomeContent() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative h-96 md:h-auto md:min-h-[700px] overflow-hidden bg-gray-100 dark:bg-gray-800",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                    src: "/images/coaching-visualization.jpg",
+                                    src: "/images/mom.jpeg",
                                     alt: "Professional woman",
                                     className: "w-full h-full object-cover animate-image-pan image-hover dark:opacity-80"
                                 }, void 0, false, {
@@ -1505,7 +1505,7 @@ function HomeContent() {
                         className: "relative h-screen md:h-screen bg-cover bg-center flex items-center overflow-hidden group",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: "/images/coaching-visualization.jpg",
+                                src: "/images/coaching-visualization.png",
                                 alt: "Coaching and visualization",
                                 className: "absolute inset-0 w-full h-full object-cover object-top animate-image-parallax image-hover group-hover:scale-105 transition-transform duration-500 dark:opacity-70"
                             }, void 0, false, {
@@ -1957,7 +1957,7 @@ function HomeContent() {
                             className: "flex justify-center gap-6 mt-8 pt-8 border-t border-gray-700",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://facebook.com",
+                                    href: "https://facebook.com/sunriseinmylife",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "text-gray-400 hover:text-blue-600 transition-colors duration-300",
@@ -1975,7 +1975,7 @@ function HomeContent() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://youtube.com",
+                                    href: "https://youtube.com/@sunriseinmylife",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "text-gray-400 hover:text-red-600 transition-colors duration-300",
@@ -1993,7 +1993,7 @@ function HomeContent() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://instagram.com",
+                                    href: "https://instagram.com/sunriseinmylife",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "text-gray-400 hover:text-pink-600 transition-colors duration-300",
@@ -2002,7 +2002,7 @@ function HomeContent() {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
-                                        lineNumber: 549,
+                                        lineNumber: 550,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
@@ -2020,12 +2020,12 @@ function HomeContent() {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
-                                        lineNumber: 558,
+                                        lineNumber: 559,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
-                                    lineNumber: 551,
+                                    lineNumber: 552,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -2062,12 +2062,12 @@ function Home() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$language$2d$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LanguageProvider"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(HomeContent, {}, void 0, false, {
             fileName: "[project]/app/page.tsx",
-            lineNumber: 570,
+            lineNumber: 571,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 569,
+        lineNumber: 570,
         columnNumber: 5
     }, this);
 }
