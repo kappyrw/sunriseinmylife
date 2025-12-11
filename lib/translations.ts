@@ -222,7 +222,7 @@ export const translations = {
       email: 'Email',
     },
     footer: {
-      name: 'Sun Rise In My Life-Therapeutic Accompaniment',
+      name: 'Sunrise In My Life-Therapeutic Accompaniment',
       location: 'Brussels, Belgium',
       ethics: 'Signatory of the Ethical Code of the Gestalt Humanistic School',
     }
