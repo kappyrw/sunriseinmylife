@@ -56,7 +56,7 @@ function HomeContent() {
       window.open(`https://wa.me/+32470197039?text=${encodedMessage}`, "_blank")
     } else {
       const subject = language === "fr" ? "Demande de rendez-vous" : "Appointment Request"
-      window.location.href = `mailto:sunriseinmylife@sun.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(appointmentText)}`
+      window.location.href = `mailto:info@sunriseinmylife.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(appointmentText)}`
     }
 
     setShowContactModal(false)
