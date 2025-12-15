@@ -8,40 +8,37 @@ interface TypingTextProps {
   className?: string
 }
 
-export function TypingText({ text, speed = 100, className = "" }: TypingTextProps) {
-  const [displayedText, setDisplayedText] = useState("")
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isDeleting, setIsDeleting] = useState(false)
+export function TypingText({
+  text,
+  speed = 100,
+  className = "",
+}: TypingTextProps) {
+  const [displayed, setDisplayed] = useState("")
+  const [direction, setDirection] = useState<"typing" | "deleting">("typing")
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isDeleting) {
-        // Typing phase
-        if (currentIndex < text.length) {
-          setDisplayedText((prev) => prev + text[currentIndex])
-          setCurrentIndex((prev) => prev + 1)
+    const timeout = setTimeout(() => {
+      if (direction === "typing") {
+        if (displayed.length < text.length) {
+          setDisplayed(text.slice(0, displayed.length + 1))
         } else {
-          // After typing completes, start deleting
-          setIsDeleting(true)
+          setDirection("deleting")
         }
       } else {
-        // Deleting phase
-        if (currentIndex > 0) {
-          setDisplayedText((prev) => prev.slice(0, -1))
-          setCurrentIndex((prev) => prev - 1)
+        if (displayed.length > 0) {
+          setDisplayed(text.slice(0, displayed.length - 1))
         } else {
-          // After deleting completes, start typing again
-          setIsDeleting(false)
+          setDirection("typing")
         }
       }
     }, speed)
 
-    return () => clearTimeout(timer)
-  }, [currentIndex, text, speed, isDeleting])
+    return () => clearTimeout(timeout)
+  }, [displayed, direction, text, speed])
 
   return (
     <span className={className}>
-      {displayedText}
+      {displayed}
       <span className="animate-pulse">|</span>
     </span>
   )
