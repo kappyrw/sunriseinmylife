@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import ErrorBoundary from '@/components/ErrorBoundary'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -37,15 +38,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased flex flex-col min-h-screen`}>
-        <main className="flex-1">
-          {children}
-        </main>
-        <footer className="border-t border-border bg-muted py-6 px-4">
-          <div className="max-w-4xl mx-auto text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Sunrise In My Life. All rights reserved.</p>
-          </div>
-        </footer>
-        <Analytics />
+        <ErrorBoundary>
+          <main className="flex-1">
+            {children}
+          </main>
+          <footer className="border-t border-border bg-muted py-6 px-4">
+            <div className="max-w-4xl mx-auto text-center text-sm text-muted-foreground">
+              <p>&copy; {new Date().getFullYear()} Sunrise In My Life. All rights reserved.</p>
+            </div>
+          </footer>
+          <Analytics />
+        </ErrorBoundary>
       </body>
     </html>
   )
