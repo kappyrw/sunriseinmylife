@@ -90,7 +90,7 @@ function HomeContent() {
                   Ne Vous Inquiétez Jamais de la Langue
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Nous offrons nos services directement en français, kinyarwanda et kirundi.
+                  Nous offrons nos services directement en français, Anglais, kinyarwanda et kirundi.
 Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue. 
                 </p>
               </div>
@@ -101,8 +101,8 @@ Et grâce à notre technologie avancée de traduction, nous pouvons aider tous l
                   Never Worry About Language
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  We provide our services directly in French, Kinyarwanda, and Kirundi.
-And with our advanced translation technology, we can assist everyone,no matter what language they speak. 
+                  We provide our services directly in French, English, Kinyarwanda, and Kirundi.
+And with our advanced translation technology, we can assist everyone, no matter what language they speak. 
                 </p>
               </div>
 
