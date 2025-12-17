@@ -1,6 +1,6 @@
 "use client"
 
-import { Facebook, Youtube, Instagram, Music, Twitter } from "lucide-react"
+import { Facebook, Youtube, Instagram, Tiktok, Twitter } from "lucide-react"
 import { useState, useEffect } from "react"
 import { translations } from "@/lib/translations"
 import { LanguageProvider, useLanguage } from "./language-provider"
