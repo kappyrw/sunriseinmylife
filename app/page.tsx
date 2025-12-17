@@ -1,7 +1,7 @@
 
 "use client"
 
-import { Facebook, Youtube, Instagram, Music } from "lucide-react"
+import { Facebook, Youtube, Instagram, Music, Twitter } from "lucide-react"
 import { useState, useEffect } from "react"
 import { translations } from "@/lib/translations"
 import { LanguageProvider, useLanguage } from "./language-provider"
@@ -520,6 +520,43 @@ And with our advanced translation technology, we can assist everyone, no matter 
             <p className="text-xs mt-4 text-gray-500">{t.footer.ethics}</p>
           </div>
 
+          <div className="mt-8 pt-8 border-t border-gray-700">
+            <h3 className="text-center text-lg font-semibold mb-4">{t.footer.paymentMethods}</h3>
+            <div className="flex flex-col items-center gap-6">
+              {/* PayPal */}
+              <div className="flex items-center gap-3 text-gray-300">
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 0 0-.794.68l-.04.22-.63 3.993-.028.15a.804.804 0 0 1-.793.68H8.032c-.351 0-.621-.318-.546-.663l1.74-11.03a.804.804 0 0 1 .793-.68h2.355c2.324 0 4.237-.207 5.693-1.623.84-.817 1.458-1.864 1.84-3.156.114-.388.16-.62.16-.62.208.095.397.201.576.318.564.368 1.01.83 1.324 1.365z" />
+                  <path
+                    d="M9.145 5.827c.14-.898.736-1.328 1.587-1.328h5.012c.872 0 1.628.04 2.311.167.233.043.455.097.668.162.213.064.416.143.608.235.096.046.19.095.28.147.55.317.95.747 1.198 1.29.174.379.272.81.305 1.286-1.307 2.132-3.885 3.15-6.793 3.15h-2.355a.805.805 0 0 0-.794.68l-.928 5.88-.354 2.24c-.076.483.195.663.546.663h3.148c.31 0 .574-.223.634-.527l.026-.133.63-3.993.04-.22a.805.805 0 0 1 .794-.68h.5c3.238 0 5.774-1.314 6.513-5.12.256-1.313.192-2.447-.3-3.327-.314-.535-.76-.997-1.324-1.365a5.636 5.636 0 0 0-.576-.318c-.19-.092-.395-.171-.608-.235a8.967 8.967 0 0 0-.668-.162 15.738 15.738 0 0 0-2.311-.167H10.732c-.85 0-1.447.43-1.587 1.328l-1.74 11.03c-.075.345.195.663.546.663h3.032l.928-5.88.928-5.88z"
+                    opacity=".7"
+                  />
+                </svg>
+                <span>PayPal</span>
+              </div>
+
+              {/* Bank Account */}
+              <div className="flex flex-col items-center gap-2 text-gray-300">
+                <div className="flex items-center gap-3">
+                  <svg
+                    className="w-8 h-8"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <line x1="2" y1="10" x2="22" y2="10" />
+                  </svg>
+                  <span className="font-semibold">{t.footer.bankAccount}</span>
+                </div>
+                <p className="text-sm text-gray-400 text-center">{t.footer.bankDetails}</p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex justify-center gap-6 mt-8 pt-8 border-t border-gray-700">
             <a
              href="https://facebook.com/sunriseinmylife"
@@ -530,6 +567,15 @@ And with our advanced translation technology, we can assist everyone, no matter 
             >
               <Facebook size={24} />
             </a>
+             <a
+            href="https://twitter.com/sunriseinmylife"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+            aria-label="Twitter"
+          >
+            <Twitter size={24} />
+          </a>
             <a
               href="https://youtube.com/@sunriseinmylife"
               target="_blank"
@@ -559,6 +605,14 @@ And with our advanced translation technology, we can assist everyone, no matter 
               <Music size={24} />
             </a>
           </div>
+        </div>
+         <div className="mt-6 text-center">
+          <p className="text-gray-400 text-sm">
+            Email:{" "}
+            <a href="mailto:info@sunriseinmylife.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+              info@sunriseinmylife.com
+            </a>
+          </p>
         </div>
       </footer>
     </div>
