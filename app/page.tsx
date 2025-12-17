@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Facebook, Youtube, Instagram, Music, Twitter } from "lucide-react"
@@ -24,10 +23,10 @@ function HomeContent() {
 
   // Show welcome modal on first load
   useEffect(() => {
-    const hasVisited = sessionStorage.getItem('hasVisitedBefore')
+    const hasVisited = sessionStorage.getItem("hasVisitedBefore")
     if (!hasVisited) {
       setShowWelcomeModal(true)
-      sessionStorage.setItem('hasVisitedBefore', 'true')
+      sessionStorage.setItem("hasVisitedBefore", "true")
     }
   }, [])
 
@@ -82,7 +81,7 @@ function HomeContent() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 md:p-10 animate-scale-in relative overflow-hidden transition-colors duration-300">
             {/* Decorative gradient background */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-500 via-teal-500 to-purple-500"></div>
-            
+
             <div className="text-center space-y-6">
               {/* French Section */}
               <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
@@ -90,8 +89,9 @@ function HomeContent() {
                   Ne Vous Inquiétez Jamais de la Langue
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Nous offrons nos services directement en français, Anglais, kinyarwanda et kirundi.
-Et grâce à notre technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur langue. 
+                  Nous offrons nos services directement en français, Anglais, kinyarwanda et kirundi. Et grâce à notre
+                  technologie avancée de traduction, nous pouvons aider tous les utilisateurs, quelle que soit leur
+                  langue.
                 </p>
               </div>
 
@@ -101,8 +101,8 @@ Et grâce à notre technologie avancée de traduction, nous pouvons aider tous l
                   Never Worry About Language
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  We provide our services directly in French, English, Kinyarwanda, and Kirundi.
-And with our advanced translation technology, we can assist everyone, no matter what language they speak. 
+                  We provide our services directly in French, English, Kinyarwanda, and Kirundi. And with our advanced
+                  translation technology, we can assist everyone, no matter what language they speak.
                 </p>
               </div>
 
@@ -150,7 +150,10 @@ And with our advanced translation technology, we can assist everyone, no matter 
       </section>
 
       {/* About Section with Side Image */}
-      <section id="about" className="py-0 md:py-0 bg-white dark:bg-gray-900 section-spacing transition-colors duration-300">
+      <section
+        id="about"
+        className="py-0 md:py-0 bg-white dark:bg-gray-900 section-spacing transition-colors duration-300"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
@@ -208,10 +211,14 @@ And with our advanced translation technology, we can assist everyone, no matter 
           <section className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 section-reveal transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-12">
-                <h4 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-8">{t.therapeutic.approach}</h4>
+                <h4 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-8">
+                  {t.therapeutic.approach}
+                </h4>
                 <div className="space-y-6">
                   <div>
-                    <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.therapeutic.gestaltTitle}</h5>
+                    <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
+                      {t.therapeutic.gestaltTitle}
+                    </h5>
                     <div className="space-y-4 text-gray-700 dark:text-gray-300">
                       {t.therapeutic.gestaltContent.map((paragraph, index) => (
                         <p key={index} className="leading-relaxed">
@@ -231,7 +238,9 @@ And with our advanced translation technology, we can assist everyone, no matter 
               </div>
 
               <div>
-                <h4 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-8">{t.therapeutic.themesTitle}</h4>
+                <h4 className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-100 mb-8">
+                  {t.therapeutic.themesTitle}
+                </h4>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {t.therapeutic.themes.map((theme, index) => (
                     <div
@@ -299,7 +308,9 @@ And with our advanced translation technology, we can assist everyone, no matter 
                 </div>
 
                 <div className="bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 transition-colors duration-300">
-                  <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">{t.support.themesTitle}</h4>
+                  <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
+                    {t.support.themesTitle}
+                  </h4>
                   <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
                     {t.support.themesList.map((item, index) => (
                       <li key={index} className="leading-relaxed">
@@ -385,7 +396,10 @@ And with our advanced translation technology, we can assist everyone, no matter 
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+      <section
+        id="contact"
+        className="py-16 md:py-24 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300"
+      >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-3xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-12">{t.contact.title}</h3>
           <div className="grid md:grid-cols-2 gap-6">
@@ -452,7 +466,6 @@ And with our advanced translation technology, we can assist everyone, no matter 
                     ? "Votre message (ex: Je souhaite un rendez-vous le...)"
                     : "Your message (e.g., I would like an appointment...)"
                 }
-                
                 value={contactForm.message}
                 onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none h-24"
@@ -559,7 +572,7 @@ And with our advanced translation technology, we can assist everyone, no matter 
 
           <div className="flex justify-center gap-6 mt-8 pt-8 border-t border-gray-700">
             <a
-             href="https://facebook.com/sunriseinmylife"
+              href="https://facebook.com/sunriseinmylife"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
@@ -567,7 +580,7 @@ And with our advanced translation technology, we can assist everyone, no matter 
             >
               <Facebook size={24} />
             </a>
-             <a
+            <a
             href="https://twitter.com/sunriseinmylife"
             target="_blank"
             rel="noopener noreferrer"
@@ -587,7 +600,6 @@ And with our advanced translation technology, we can assist everyone, no matter 
             </a>
             <a
               href="https://instagram.com/sunriseinmylife"
-
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-pink-600 transition-colors duration-300"
@@ -626,3 +638,4 @@ export default function Home() {
     </LanguageProvider>
   )
 }
+
