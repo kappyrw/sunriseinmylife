@@ -608,13 +608,13 @@ function HomeContent() {
               <Instagram size={24} />
             </a>
             <a
-              href="https://tiktok.com"
+              href="https://tiktok.com/sunriseinmylife"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-black transition-colors duration-300"
               aria-label="TikTok"
             >
-              <Music size={24} />
+              <Tiktok size={24} />
             </a>
           </div>
         </div>
