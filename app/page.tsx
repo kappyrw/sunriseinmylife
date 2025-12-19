@@ -55,7 +55,7 @@ function HomeContent() {
       window.open(`https://wa.me/+32470197039?text=${encodedMessage}`, "_blank")
     } else {
       const subject = language === "fr" ? "Demande de rendez-vous" : "Appointment Request"
-      window.location.href = `mailto:info@sunriseinmylife.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(appointmentText)}`
+      window.location.href = `mailto:contact@sunriseinmylife.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(appointmentText)}`
     }
 
     setShowContactModal(false)
@@ -629,8 +629,8 @@ function HomeContent() {
          <div className="mt-6 text-center">
           <p className="text-gray-400 text-sm">
             Email:{" "}
-            <a href="mailto:info@sunriseinmylife.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-              info@sunriseinmylife.com
+            <a href="mailto:contact@sunriseinmylife.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+              contact@sunriseinmylife.com
             </a>
           </p>
         </div>
