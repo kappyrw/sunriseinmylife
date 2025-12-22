@@ -115,7 +115,7 @@ export const translations = {
       ethics: "Signataire du code de déontologie de l'École Humaniste de Gestalt",
       paymentMethods: "Méthodes de Paiement",
       bankAccount: "Compte Bancaire",
-      bankDetails: "IBAN: BE00 0000 0000 0000 - BIC: XXXXXX",
+      bankDetails: "IBAN: BE87 9502 3686 0894 ",
     },
   },
   en: {
@@ -230,7 +230,7 @@ export const translations = {
       ethics: "Signatory of the Ethical Code of the Gestalt Humanistic School",
       paymentMethods: "Payment Methods",
       bankAccount: "Bank Account",
-      bankDetails: "IBAN: BE00 0000 0000 0000 - BIC: XXXXXX",
+      bankDetails: "IBAN: BE87 9502 3686 0894",
     },
   },
 }
