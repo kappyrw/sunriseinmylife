@@ -572,7 +572,7 @@ function HomeContent() {
 
           <div className="flex justify-center gap-6 mt-8 pt-8 border-t border-gray-700">
             <a
-              href="https://facebook.com/sunriseinmylife"
+              href="https://facebook.com/sunriseinmylife1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
