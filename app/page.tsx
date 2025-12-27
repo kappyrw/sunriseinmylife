@@ -599,7 +599,7 @@ function HomeContent() {
               <Youtube size={24} />
             </a>
             <a
-              href="https://instagram.com/sunriseinmylife"
+              href="https://instagram.com/sunriseinmylife3"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-pink-600 transition-colors duration-300"
