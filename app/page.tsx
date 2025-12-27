@@ -608,7 +608,7 @@ function HomeContent() {
               <Instagram size={24} />
             </a>
             <a
-             href="https://www.tiktok.com/@sunriseinmylife"
+             href="https://www.tiktok.com/@sunriseinmylife3"
   target="_blank"
   rel="noopener noreferrer"
   className="text-gray-400 hover:text-black transition-colors duration-300"
