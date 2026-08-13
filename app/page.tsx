@@ -6,7 +6,6 @@ import { translations } from "@/lib/translations"
 import { LanguageProvider, useLanguage } from "./language-provider"
 import { TypingText } from "@/components/typing-text"
 import { Header } from "@/components/header"
-import { CommentSection } from "@/components/CommentSection"
 
 function HomeContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -524,9 +523,6 @@ function HomeContent() {
           </div>
         </div>
       )}
-
-      {/* Comment Section */}
-      <CommentSection />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
