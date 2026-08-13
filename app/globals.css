@@ -2,7 +2,6 @@
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
-
 :root {
   /* Hope & Mind inspired warm, neutral colors */
   --background: oklch(0.98 0.01 50);
