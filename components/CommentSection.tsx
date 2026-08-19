@@ -23,21 +23,29 @@ export function CommentSection() {
   const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const isClient = typeof window !== "undefined"
+
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) {
-      try {
+    if (!isClient) return
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY)
+      if (stored) {
         const parsed = JSON.parse(stored)
         setComments(parsed)
-      } catch {
-        setComments([])
       }
+    } catch {
+      setComments([])
     }
-  }, [])
+  }, [isClient])
 
   const saveComments = (updated: Comment[]) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
     setComments(updated)
+    if (!isClient) return
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
+    } catch (err) {
+      console.error("Failed to save comments to localStorage:", err)
+    }
   }
 
   const handleSubmit = (e: React.FormEvent) => {
