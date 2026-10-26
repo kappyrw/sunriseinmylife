@@ -175,7 +175,7 @@ function HomeContent() {
             </div>
             <div className="relative h-96 md:h-auto md:min-h-[700px] overflow-hidden bg-gray-100 dark:bg-gray-800">
               <img
-                src="/images/momnew.jpeg"
+                src="public/images/momnew.jpeg"
                 alt="Professional woman"
                 className="w-full h-full object-cover animate-image-pan image-hover dark:opacity-80"
               />
